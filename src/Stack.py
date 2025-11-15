@@ -1,8 +1,8 @@
 # we implement ADT stack with List
 
 class Stack:
-    # 把List的末端当作栈的顶，这样push和pop操作都是O(1)的时间复杂度
-    # List每个方法的复杂度可以查阅资料获取
+    # 鎶奓ist鐨勬湯绔綋浣滄爤鐨勯《锛岃繖鏍穚ush鍜宲op鎿嶄綔閮芥槸O(1)鐨勬椂闂村鏉傚害
+    # List姣忎釜鏂规硶鐨勫鏉傚害鍙互鏌ラ槄璧勬枡鑾峰彇
     def __init__(self):
         self.list=[]
 
@@ -25,7 +25,7 @@ class Stack:
         return len(self.list)
 
 class Stack_:
-    # 把List的首端当作栈顶，这样push和pop的时间复杂度均为O(N)
+    # 鎶奓ist鐨勯绔綋浣滄爤椤讹紝杩欐牱push鍜宲op鐨勬椂闂村鏉傚害鍧囦负O(N)
     def __init__(self):
         self.list=[]
 

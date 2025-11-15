@@ -1,15 +1,12 @@
 from src.Stack import Stack
+from src.Queue import Queue
 
-def decimal2binary(item):
-	S=Stack()
-	while item>0:
-		rem=item%2
-		S.push(rem)
-		item = item//2
-	B=""
-	while not S.isEmpty():
-		B+=str(S.pop())
-	return B
-
-# test
-print(decimal2binary(233))
+q=Queue()
+print(q.isEmpty())
+q.enqueue(4)
+print(q.list)
+q.enqueue("dog")
+print(q.size())
+print(q.isEmpty())
+print(q.dequeue())
+print(q.size())

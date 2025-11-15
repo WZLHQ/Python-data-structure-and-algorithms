@@ -1,16 +1,17 @@
-# ջ��Ӧ��
 
-## Ӧ��1��������ƥ��
+# 栈的应用
 
-���ȣ�ÿ��������Ҫǡ�ö�Ӧһ�������ţ���Σ�ÿ�Կ�������Ҫ��ȷǶ�ס�
+## 应用1：简单括号匹配
 
-���´򿪵�������Ӧ��ƥ�����������������š�
+首先，每个开括号要恰好对应一个闭括号；其次，每对开闭括号要正确嵌套。
 
-���Կ�����[��Ƶ](https://www.bilibili.com/video/BV1uxCzYrEvK?spm_id_from=333.788.videopod.sections&vd_source=5a390d9ceffbe62da24960caba35e434)����Ŀ������
+最新打开的左括号应该匹配最先遇到的右括号。
 
-## Ӧ��2��ʮ����ת��Ϊ������
+尝试看看此[视频](https://www.bilibili.com/video/BV1uxCzYrEvK?spm_id_from=333.788.videopod.sections&vd_source=5a390d9ceffbe62da24960caba35e434)的题目描述。
 
-Q��Ϊʲô
+## 应用2：十进制转换为二进制
+
+Q：为什么
 
 ```python
 from src.Stack import Stack
@@ -30,13 +31,13 @@ def decimal2binary(item):
 print(decimal2binary(233))
 ```
 
-### ��ϰ���ף���ʮ����ת��Ϊʮ�������������
+### 练习进阶：将十进制转换为十六以下任意进制
 
 ```python
 # TODO
 ```
 
-## Ӧ��3��ͨ�õ���׺ת��׺����ʽ�㷨��ֻ���Ӽ��˳���
+## 应用3：通用的中缀转后缀表达式算法（只带加减乘除）
 
 ```python
 # TODO
@@ -47,14 +48,13 @@ def infix2postfix(item):
 
 ```
 
-### ������ϰ�����Ӽ��˳�������
+### 进阶练习：带加减乘除与括号
 
 ```python
 # TODO
 ```
 
-
-## Ӧ��4����׺����ʽ��ֵ
+## 应用4：后缀表达式求值
 
 ```python
 # TODO
