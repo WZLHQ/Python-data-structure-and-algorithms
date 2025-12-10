@@ -1,23 +1,23 @@
 
-class Stack:
+class Deque:
 
     def __init__(self):
         self.list=[]
 
-    def stack(self):
-        return self.list
-    
-    def push(self,item):
+    def addRear(self, item):
         self.list.append(item)
-    
-    def pop(self):
-        return self.list.pop()
 
-    def peek(self):
-        return self.list[-1]
+    def removeRear(self):
+        return self.list.pop()
+    
+    def addFront(self, item):
+        self.list.insert(0,item)
+
+    def removeFront(self):
+        return self.list.pop(0)
 
     def isEmpty(self):
         return self.list == []
-
+    
     def size(self):
         return len(self.list)

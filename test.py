@@ -1,10 +1,7 @@
 from src.Stack import Stack
 from src.Queue import Queue
+from src.Deque import Deque
+from src.LinkedList import Node
 
-def Josephus(name_list, num):
-    q=Queue()
-    for n in name_list:
-        q.enqueue(n)
-        
-
-    pass
+temp=Node(93)
+print(temp.getData())

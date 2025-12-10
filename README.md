@@ -40,3 +40,23 @@
 3. dequeue(): 从队首移除数据项，返回值为队首数据项，队列被修改
 4. isEmpty(): 测试是否为空队列，返回值为bool型
 5. size(): 返回队列中数据项的个数
+
+## 双端队列(Deque)
+
+* 相关操作
+
+1. Deque(): 创建一个空双端队列对象，返回值为Queue对象
+2. addFront(item): 将item加入队首
+3. addRear(item): 将item加入队尾
+4. removeFront(): 从队首移除数据项，返回被移除的数据项，双端队列被改变
+5. removeRear(): 从队尾移除数据项，返回被移除的数据项，双端队列被改变
+6. isEmpty(): 返回deque是否为空，bool型
+7. size(): 返回deque中包含数据项的个数
+
+## 链表(LinkedList)
+
+一种
+
+* 特点为
+
+* 相关操作
