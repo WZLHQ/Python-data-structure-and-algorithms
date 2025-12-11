@@ -16,7 +16,7 @@ class Node:
     def setNext(self, newnext):
         self.next=newnext
 
-class LinkedList:
+class UnorderedList:
     def __init__(self):
         self.head=None
     
@@ -37,6 +37,8 @@ class LinkedList:
         return count
     
     def search(self,item):
+        # there maybe multiple items in the linkedlist
+        # however, this function only can find the first.
         current=self.head
         found=False
         while current!=None and not found:
@@ -47,9 +49,11 @@ class LinkedList:
         return found
     
     def remove(self, item):
+        # TODO check the logic
         current=self.head
         previous=None
         found=False
+
         while not found:
             if current.getData()==item:
                 found=True
