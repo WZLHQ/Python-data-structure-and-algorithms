@@ -1,11 +1,17 @@
 
-def list_sum(lst):
-    
-    if lst==[]:
-        raise ValueError("The list cannot be empty.")
-    if len(lst)==1:
-        return lst.pop()
-    else:
-        return lst.pop() + list_sum(lst)
+class Queue:
+    def __init__(self):
+        self.list=[]
 
-print("the sum of list is: ",list_sum([1,2,3,4,5]))
+    def enqueue(self, item):
+        self.list.append(item)
+    
+    def isEmpty(self):
+        return self.list==[]
+    
+    def dequeue(self):
+        return self.list.pop(0) if not self.isEmpty() else None
+
+    def size(self):
+        return self.list
+    

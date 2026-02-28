@@ -1,20 +1,17 @@
 
 class Queue:
-
     def __init__(self):
         self.list=[]
 
-    def queue(self):
-        return self.list
-
-    def enqueue(self,item):
-        self.list.insert(0,item)
-
-    def dequeue(self):
-        return self.list.pop()
-
-    def isEmpty(self):
-        return self.list == []
+    def enqueue(self, item):
+        self.list.append(item)
     
+    def isEmpty(self):
+        return self.list==[]
+    
+    def dequeue(self):
+        return self.list.pop(0) if not self.isEmpty() else None
+
     def size(self):
-        return len(self.list)
+        return self.list
+    
