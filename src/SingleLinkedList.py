@@ -34,9 +34,10 @@ class singleLinkedList:
         '''非递归形式'''
         cur=self.__head
         while cur !=None:
-            print(cur.data,end=" ")
+            print(cur.data, end=" ")
             cur=cur.next
         print("")
+
         '''递归形式
         每次调用travel时，travel_print都会被重复调用，可以考虑将其作为私有方法
         '''
@@ -57,7 +58,7 @@ class singleLinkedList:
     def append(self,item):
         '''链表尾部添加元素，即尾插法'''
         node=SingleNode(item)
-        if self.__head == None:
+        if self.__head is None:
             self.__head=node
         else:
             cur=self.__head
@@ -71,28 +72,45 @@ class singleLinkedList:
         pos 从0开始
         '''
         if pos<0:
-            # 默认头插法
             self.add(item)
-        elif pos > self.length()-1:
-            # 默认尾插法
+        elif pos>self.length()-1:
             self.append(item)
         else:
-            pre=self.__head
+            node=SingleNode(item)
+            cur=self.__head
             count=0
             while count<(pos-1):
-                pre=pre.next
+                cur=cur.next
                 count+=1
-
-            node=SingleNode(item)
-            node.next=pre.next
-            pre.next=node
+            node.next=cur.next
+            cur.next=node
 
     def remove(self,item):
-        ''''''
-        pass
+        '''从头开始，删除第一个符合情况的元素即可退出'''        
+        cur=self.__head
+        pre=None
+        while cur != None:
+            if cur.data==item:
+                if cur==self.__head:
+                    self.__head=self.__head.next
+                else:
+                    pre.next=cur.next
+                break
+            else:
+                pre=cur
+                cur=cur.next
 
     def search(self,item):
-        pass
+        '''从头开始查找，找到就返回True，不管后续是否仍然存在'''
+        cur=self.__head
+        while cur!=None:
+            if cur.data==item:
+                return True
+            else:
+                cur=cur.next
+        return False
+
+
 
 if __name__ =="__main__":
     ll=singleLinkedList()
@@ -113,4 +131,11 @@ if __name__ =="__main__":
     ll.insert(3,100)
     ll.travel()
     ll.insert(10,200)
+    print("start")
+    ll.travel()
+    ll.remove(100)
+    ll.travel()
+    ll.remove(9)
+    ll.travel()
+    ll.remove(200)
     ll.travel()
