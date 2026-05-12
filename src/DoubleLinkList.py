@@ -10,22 +10,61 @@ class DoubleLinkList:
         self.__head=node
     
     def is_empty(self):
-        pass
+        return self.__head == None
 
     def length(self):
-        pass
-    
+        count=0
+        cur = self.__head
+        while cur != None:
+            count+=1
+            cur=cur.next
+        return count
+
     def travel(self):
-        pass
+        cur = self.__head
+        while cur != None:
+            print(cur.data, end=" ")
+            cur=cur.next
+        print(" ")
+
 
     def add(self,item):
-        pass
+        # TODO refine this code
+        node = DNode(item)
+        if self.__head == None:
+            self.__head=node
+        else:
+            node.next=self.__head
+            self.__head.pre=node
+            self.__head=node
 
     def append(self,item):
-        pass
-
+        node=DNode(item)
+        if self.__head == None:
+            self.__head=node
+        else:
+            cur = self.__head
+            while cur.next != None:
+                cur=cur.next
+            node.pre=cur
+            cur.next=node
+            
     def insert(self,pos,item):
-        pass
+        if pos < 0:
+            self.add(item)
+        elif pos > 0:
+            self.append(item)
+        else:
+            count=0
+            node=DNode(item)
+            cur=self.__head
+            while count<pos:
+                cur=cur.next
+                count+=1
+            node.next=cur
+            node.pre=cur.pre
+            cur.pre.next=node
+            cur.pre=node
 
     def remove(self,item):
         pass
