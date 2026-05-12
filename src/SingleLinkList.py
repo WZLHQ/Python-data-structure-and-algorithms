@@ -1,11 +1,11 @@
 # coding: utf-8
 
-class SingleNode:
+class SNode:
     def __init__(self, data):
         self.data=data
         self.next=None
 
-class singleLinkedList:
+class singleLinkList:
     '''单链表'''
     def __init__(self,node=None):
         # 开头双下划线表示私有属性
@@ -50,14 +50,14 @@ class singleLinkedList:
 
     def add(self,item):
         '''链表头部添加元素，即头插法'''
-        node=SingleNode(item)
+        node=SNode(item)
         # 这个也可以 node.next,self.__head=self.__head,node
         node.next=self.__head
         self.__head=node
 
     def append(self,item):
         '''链表尾部添加元素，即尾插法'''
-        node=SingleNode(item)
+        node=SNode(item)
         if self.__head is None:
             self.__head=node
         else:
@@ -76,7 +76,7 @@ class singleLinkedList:
         elif pos>self.length()-1:
             self.append(item)
         else:
-            node=SingleNode(item)
+            node=SNode(item)
             cur=self.__head
             count=0
             while count<(pos-1):
@@ -113,7 +113,7 @@ class singleLinkedList:
 
 
 if __name__ =="__main__":
-    ll=singleLinkedList()
+    ll=singleLinkList()
     print(ll.is_empty())
     print(ll.length())
     ll.append(1)
