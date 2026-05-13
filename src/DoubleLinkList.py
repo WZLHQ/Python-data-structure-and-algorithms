@@ -27,7 +27,6 @@ class DoubleLinkList:
             cur=cur.next
         print(" ")
 
-
     def add(self,item):
         node = DNode(item)
         if self.__head == None:
@@ -83,7 +82,6 @@ class DoubleLinkList:
         while cur != None:
             if cur.data==item:
                 if cur==self.__head:
-                    # TODO 此处用cur=cur.next行不行？
                     self.__head=cur.next
                     if cur.next:
                         cur.next.pre=None
