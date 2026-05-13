@@ -71,8 +71,7 @@ class singleLinkList:
         指定位置添加元素
         pos 从0开始
         '''
-        # TODO should be "pos <= 0"
-        if pos<0:
+        if pos<=0:
             self.add(item)
         elif pos>self.length()-1:
             self.append(item)

@@ -78,54 +78,50 @@ class SinCirLinkList:
             self.append(item)
         else:
             node=SCNode(item)
-
-            # 1 定位到目标节点以及前一个节点，即为循环后的cur和pre
-            pre=None
-            cur=self.__head
-            while cur.data != item:
-                pre=cur
-                cur=cur.next
-            
-            # 2 完成insert
-            node.next=cur
+            pre=self.__head
+            count=0
+            while count<(pos-1):
+                pre=pre.next
+                count+=1
+            node.next=pre.next
             pre.next=node
 
     def remove(self,item):
+
         # 是否为空链表
         if self.__head != None:
 
-            # 假设第一个节点为待删除元素
-            if self.__head.data==item:
-                # 假设当前链表就一个节点
-                if self.__head.next==None:
-                    self.__head=None
-                    return
-                else:
-                    # 1 将链表头指向下一个节点
-                    self.__head=self.__head.next
-                    # 2 完成回环修改
-                    cur = self.__head
-                    while cur.next != self.__head:
-                        cur=cur.next
-                    cur.next=self.__head
-                    return
-
-            # 假设待删除节点不是第一个与最后一个
             pre=None
             cur=self.__head
             while cur.next != self.__head:
                 if cur.data==item:
                     if cur!=self.__head:
+                        # item是中间节点的情况
                         pre.next=cur.next
-                        return
+                    else:
+                        # item是头节点的情况
+                        # 这种情况下需要找到尾节点，即循环后end_ndoe就指向未节点
+                        end_node=self.__head
+                        while end_node.next != self.__head:
+                            end_node=end_node.next
+                        
+                        self.__head=cur.next
+                        end_node.next=self.__head
+                    return
+
                 pre=cur
                 cur=cur.next
             
-            # 假设待删除节点是第一个
+            # 假设待删除节点是最后一个
+            # 此时的cur就是链表的最后一个节点，自然也包含链表只有一个节点的情况
             if cur.data==item:
-                pre.next=cur.next
+                if cur==self.__head:
+                    self.__head=None
+                else:
+                    pre.next=cur.next
 
     def search(self,item):
+
         if self.__head == None:
             return False
         
@@ -137,6 +133,8 @@ class SinCirLinkList:
 
         if cur.data==item:
             return True
+        
+        return False
 
 if __name__ =="__main__":
     ll=SinCirLinkList()
